@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div><h1> My TODO LIST</h1></div>
+        <div class="add-task-container">
+            <input type="text" id="taskInput" placeholder="Enter task...">
+            <button onclick="addTask()">Add Task</button>
+        </div>
+        <div class="task-container" id="taskContainer">
+            <!-- Tasks will be added here -->
+        </div>
+        <button onclick="showPopup()">Done Tasks</button>
+    </div>
+
+    
+    
+
+
+    
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span> <!-- Close button -->
+            <h2 class="minititle">Done Tasks</h2>
+            <div id="doneTasksList"></div> <!-- Container for done tasks -->
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

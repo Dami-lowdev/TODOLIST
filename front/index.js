@@ -16,8 +16,8 @@ function fetchTasks() {
                 taskDiv.innerHTML = `
                 <p><strong>Content:</strong> ${task.content}</p>
                 <p><strong>State:</strong> ${task.docstate}</p>
-                <button class="button" onclick="completeTask('${task._id}', '${task.docstate}')">Tick</button>
-                <button class="button" onclick="deleteTask('${task._id}')">Delete</button>
+                <button class="buttondone" onclick="completeTask('${task._id}', '${task.docstate}')">Tick</button>
+                <button class="buttondelete" onclick="deleteTask('${task._id}')">Delete</button>
             `;
                 taskContainer.appendChild(taskDiv);
                 }

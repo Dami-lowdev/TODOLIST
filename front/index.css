@@ -1,10 +1,15 @@
+html{
+    height: 100%;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: rgb(33, 182, 187);
+    background: linear-gradient(to bottom, #87CEEB, #ADD8E6, #BFEFFF);
     color: white;
 }
+
+
 
 
 .container {
@@ -88,7 +93,7 @@ button:hover {
 }
 
 .popup-content {
-    background-color: rgb(33, 182, 187);
+    background: linear-gradient(to bottom, #87CEEB, #ADD8E6, #BFEFFF);
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;

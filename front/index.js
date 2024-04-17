@@ -15,7 +15,6 @@ function fetchTasks() {
                 taskDiv.id = task._id; // Utilisation de l'id comme identifiant
                 taskDiv.innerHTML = `
                 <p><strong>Content:</strong> ${task.content}</p>
-                <p><strong>State:</strong> ${task.docstate}</p>
                 <button class="buttondone" onclick="completeTask('${task._id}', '${task.docstate}')">Tick</button>
                 <button class="buttondelete" onclick="deleteTask('${task._id}')">Delete</button>
             `;

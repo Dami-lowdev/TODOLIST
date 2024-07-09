@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+      - name: todo-app
+        image: m1damienlan/my-todo-list:latest
+        ports:
+        - containerPort: 3500
+        env:
+        - name: ENV_MONGO
+          value: mongodb://mongo:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.9
+
+
+          

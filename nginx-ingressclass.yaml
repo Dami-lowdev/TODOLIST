@@ -1,0 +1,11 @@
+apiVersion: networking.k8s.io/v1
+kind: IngressClass
+metadata:
+  name: nginx
+  labels:
+    app.kubernetes.io/managed-by: "Helm"
+  annotations:
+    meta.helm.sh/release-name: "nginx-ingress"
+    meta.helm.sh/release-namespace: "default"
+spec:
+  controller: k8s.io/ingress-nginx

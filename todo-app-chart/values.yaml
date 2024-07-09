@@ -1,0 +1,30 @@
+replicaCount: 2
+
+image:
+  repository: m1damienlan/my-todo-list
+  tag: latest
+
+containerPort: 3500
+
+mongoConnectionString: "mongodb://mongo:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.9"
+
+ingress:
+  host: todo-app.local
+
+service:
+  type: ClusterIP
+  port: 3500
+
+serviceAccount:
+  create: true  
+  annotations:  
+    example.com/annotation-key: "annotation-value"
+  automount: true  # Optional setting for automountServiceAccountToken
+
+
+autoscaling:
+  enabled: true
+  minReplicas: 2
+  maxReplicas: 3
+  targetCPUUtilizationPercentage: 50
+  # Optional: targetMemoryUtilizationPercentage: 60

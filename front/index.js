@@ -3,7 +3,7 @@ window.onload = function () {
 };
 
 function fetchTasks() {
-    fetch('http://localhost:3500/todo')
+    fetch('/todo')
         .then(response => response.json())
         .then(tasks => {
             const taskContainer = document.getElementById('taskContainer');
@@ -27,7 +27,7 @@ function fetchTasks() {
 
 function completeTask(taskId, currentState) {
     const newState = currentState === 'done' ? 'undone' : 'done';
-    fetch(`http://localhost:3500/todo/${taskId}`, {
+    fetch(`/todo/${taskId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ function moveTaskToPopup(taskId) {
 
 
 function deleteTask(taskId) {
-    fetch(`http://localhost:3500/todo/${taskId}`, {
+    fetch(`/todo/${taskId}`, {
         method: 'DELETE'
     })
         .then(response => {
@@ -74,7 +74,7 @@ function addTask() {
     const taskInput = document.getElementById('taskInput');
     const taskContent = taskInput.value.trim();
     if (taskContent !== '') {
-        fetch('http://localhost:3500/todo/', {
+        fetch('/todo/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -101,7 +101,7 @@ function showPopup() {
     doneTasksList.innerHTML = ""; // Clear previous content
 
     // Fetch the list of done tasks from the server
-    fetch('http://localhost:3500/todo/?docstate=done')
+    fetch('/todo/?docstate=done')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Failed to fetch done tasks');
